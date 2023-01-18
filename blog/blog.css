@@ -1,0 +1,25 @@
+* {	margin:0; padding:0; }
+a:hover, a:visited, a:link, a:active {	text-decoration: none; }
+li { list-style:none; }
+.clear { clear:both; }
+#wrap {	width:800px; margin: 0 auto; }
+header { height:62px; border-bottom:solid 1px #aaaaaa; margin-top:16px; }
+#logo {	float:left;	margin-left:20px; margin-top:5px; }
+#top { float:right;	margin-right:20px; }
+#blog_write { margin-top: 20px;	height:130px; }
+#blog_write .textarea { float: left;	width: 80%; }
+#blog_write .button { float: right; width: 18%; }
+#blog_write textarea { width: 100%;	height: 120px; border:solid 1px #cccccc; }
+#blog_write button { padding: 50px; }
+#blog_content { border-top:solid 1px green; padding: 20px 0; margin-top: 20px; }
+#writer_info li { display: inline-block; margin-right: 20px; }
+#ripple { margin-top: 10px;	}
+#ripple_title {	padding-top:10px; padding-left:10px; }
+#ripple_title li { display:inline; margin-right: 20px; }
+#ripple_content { padding:10px; border-bottom:dotted 1px #cccccc; }
+#ripple_insert { margin-top:10px; }
+#ripple_textarea { width: 85%; float:left; }
+#ripple_textarea textarea {	width: 100%; height:50px; border:solid 1px #cccccc; }
+#ripple_button { width: 13%; float:right; }
+#ripple_button button {	padding: 20px 10px; }
+#page_num {	margin:20px; text-align:center; }

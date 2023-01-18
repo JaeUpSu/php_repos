@@ -18,12 +18,12 @@
         <div class="top">     
             <?php 
                 session_start();
-                if ($_SESSION["userid"]) {
+                if (isset($_SESSION["userid"])) {
             ?>
             
-            <a href="#"><?=$_SESSION["userid"]."님의 "?>정보수정</a>    
+            <a href="modify_form.php"><?=$_SESSION["userid"]."님의 "?>정보수정</a>    
                 <span> | </span>
-                <a href="#" onclick="#">로그아웃</a>
+            <a href="logout.php" onclick="#">로그아웃</a>
 
             <?php 
                 } else {
