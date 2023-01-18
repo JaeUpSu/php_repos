@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <h3>1) 성적 입력 하기</h3>
@@ -27,7 +28,7 @@
 <p>
 <h3>2) 성적 출력 하기</h3>  
  <!-- 제목 표시 시작 -->
- <table border="1" >
+ <table class="datas" border="1" >
    <tr>
       <th>번호</th>
       <th>이름</th>
@@ -64,7 +65,7 @@
          $sum = $row["sum"];
          $avg = $row["avg"];
    ?>
-         <tr align='center'>
+         <tr  align='center'>
             <form action="modify.php" method='post'>
                <input type="hidden" name="num" value="<?=$num?>">
                <td><?=$number?></td>  

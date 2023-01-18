@@ -9,8 +9,6 @@
     $sql .= "sub3 int, ";
     $sql .= "sub4 int, ";
     $sql .= "sub5 int, ";
-    $sql .= "sub6 int, ";
-    $sql .= "sub7 int, ";
     $sql .= "sum int, ";
     $sql .= "avg float, ";   
     $sql .= "primary key(num) )";
