@@ -30,10 +30,11 @@
         else {
             session_start();
             $_SESSION["userid"] = $row["id"];
+            $_SESSION["username"] = $row["name"];
 
             echo "<script>
-                location.href = 'index.php';
-              </script>";
+                    location.href ='_index.php';
+                    </script>";
         }
      }        
 ?>
