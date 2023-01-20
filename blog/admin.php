@@ -7,7 +7,7 @@
 <body>
     <div id="wrap">
         <header>
-            <div id="logo"><a href="index.php"><img src="img/logo.png"></a></div>
+            <div id="logo"><a href="_index.php"><img src="img/logo.png"></a></div>
             <div id="top">
                 <?php 
                     session_start();
@@ -16,7 +16,7 @@
                         $username = $_SESSION["username"];
                 ?>
                 
-                <a href="modify_form.php"><?=$userid?>님의 회원관리</a>    
+                <a href="_index.php">홈</a>    
                     <span> | </span>
                 <a href="logout.php" onclick="#">로그아웃</a>
 
@@ -37,8 +37,12 @@
         <section id="content">
             <h3> 고객 목록</h3>  
             <form action="admin.php?mode=search" method="post">
-            <input type="text" name="command" size="50"> 
-            <button type="submit">검색(SQL 명령)</button><br><br>
+                <select name="select">
+                    <option value="id">아이디</option>
+                    <option value="name">이름</option>
+                </select>
+                <input type="text" name="keyword" size="50"> 
+                <button type="submit">찾기</button><br><br>
             </form>
             
             <table border="1">
@@ -52,18 +56,22 @@
                     <th>삭제</th>
                 </tr>    
                 <?php
+
                     if(isset($_GET["mode"])) $mode = $_GET["mode"];
                     else $mode = "";
 
-                    if(isset($_POST["command"])) $command = $_POST["command"];
-                    else $command = "";
+                    if(isset($_POST["select"])) $select = $_POST["select"];
+                    else $select = "";
+
+                    if(isset($_POST["keyword"])) $keyword = $_POST["keyword"];
+                    else $keyword = "";
 
                     include "dbconn.php";
                     
                     $sql = "select * from member";
 
-                    if ($mode=="search" && $command!="") 
-                        $sql = $_POST["command"];   
+                    if ($mode=="search") 
+                        $sql = "select * from member where $select='$keyword'";   
 
                     $result = mysqli_query($conn, $sql);
                     $number = 1;

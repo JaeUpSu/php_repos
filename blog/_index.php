@@ -21,6 +21,12 @@
             <a href="logout.php" onclick="#">로그아웃</a>
 
             <?php 
+					if($userid == "admin") {
+			?>
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="admin.php" onclick="#">회원정보 보러가기</a>
+			<?php
+					}
                 } else {
             ?>
 
@@ -108,10 +114,12 @@
 ?>
 			
 		</div>
-			<div id="page_num"> ◀ 이전 &nbsp;&nbsp;&nbsp;&nbsp; 
+			<div id="page_num">  
 <?php
-	function set_page($page) {
-		
+	
+	if ($page > 1) {
+		$prev_page = $page-1;
+		echo "<a href='_index.php?page=$prev_page'>◀ 이전 &nbsp;&nbsp;&nbsp;&nbsp;</a>";
 	}
 	for ($i=1; $i<=$total_page; $i++) {
 		if($page == $i) {
@@ -121,8 +129,11 @@
 		}
 		echo "&nbsp;&nbsp;&nbsp;&nbsp;";
 	}
+	if ($page < $total_page) {
+		$next_page = $page+1;
+		echo "<a href='_index.php?page=$next_page'>다음 ▶</a>";
+	}
 ?>	
-			다음 ▶</div>
     </section> <!-- end of content -->
 </div> <!-- end of wrap -->
 </body>
